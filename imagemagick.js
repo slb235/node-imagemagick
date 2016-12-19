@@ -350,7 +350,8 @@ exports.resizeArgs = function(options) {
     filter: 'Lagrange',
     sharpening: 0.2,
     customArgs: [],
-    timeout: 0
+    timeout: 0,
+    orient: true
   }
 
   // check options
@@ -382,6 +383,9 @@ exports.resizeArgs = function(options) {
   }
   if (opt.strip) {
     args.push('-strip');
+  }
+  if (opt.orient) {
+    args.push('-auto-orient');
   }
   if (opt.width || opt.height) {
     args.push('-resize');
